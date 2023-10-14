@@ -11,23 +11,29 @@ import Post from "./views/Post";
 import AuthLayout from "./layouts/AuthLayout";
 import Login from "./views/Auth/Login";
 import Register from "./views/Auth/Register";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 const routes = [
   {
-    element: <DashboardLayout />,
+    element: <ProtectedRoutes />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/about", element: <About /> },
       {
-        path: "/posts",
+        element: <DashboardLayout />,
         children: [
+          { path: "/", element: <Home /> },
+          { path: "/about", element: <About /> },
           {
-            index: true,
-            element: <Posts />,
-          },
-          {
-            path: ":postId",
-            element: <Post />,
+            path: "/posts",
+            children: [
+              {
+                index: true,
+                element: <Posts />,
+              },
+              {
+                path: ":postId",
+                element: <Post />,
+              },
+            ],
           },
         ],
       },
