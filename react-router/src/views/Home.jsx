@@ -1,4 +1,3 @@
-import NavBar from "../components/NavBar";
 const Home = () => {
   //   const menu = [
   //     { name: "About Us", link: "about" },
@@ -8,7 +7,6 @@ const Home = () => {
   return (
     <div>
       <h1>This is the homepage</h1>
-      <NavBar />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import NavBar from "../components/NavBar";
 import Spinner from "../components/Spinner";
 
 const Posts = () => {
@@ -34,10 +33,6 @@ const Posts = () => {
   return (
     <div>
       <h1>The Posts</h1>
-
-      <div style={{ marginBottom: 40 }}>
-        <NavBar />
-      </div>
 
       {isLoading && <Spinner />}
 

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import NavBar from "../components/NavBar";
 
 const About = () => {
   useEffect(() => {
@@ -11,7 +10,6 @@ const About = () => {
   return (
     <div>
       <h1>About Page</h1>
-      <NavBar />
     </div>
   );
 };
