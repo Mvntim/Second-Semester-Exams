@@ -13,11 +13,16 @@ const routes = [
   { path: "/about", element: <About /> },
   {
     path: "/posts",
-    element: <Posts />,
-  },
-  {
-    path: "/posts/:postId",
-    element: <Post />,
+    children: [
+      {
+        index: true,
+        element: <Posts />,
+      },
+      {
+        path: ":postId",
+        element: <Post />,
+      },
+    ],
   },
 ];
 
